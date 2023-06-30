@@ -20,6 +20,10 @@ function addBookToLibrary(title, author, pageNumber, isRead) {
 function createBookCard(book) {
 	const bookCard = document.createElement("section");
 	bookCard.classList.add("book-card");
+	
+	const bookCardRemove = document.createElement("img");
+	bookCardRemove.setAttribute("src","x_icon.svg");
+	bookCardRemove.classList.add("book-card__remove");
 
 	const bookCardTitle = document.createElement("header");
 	bookCardTitle.classList.add("book-card__title");
@@ -37,6 +41,7 @@ function createBookCard(book) {
 	bookCardIsRead.classList.add("book-card__isRead");
 	bookCardIsRead.appendChild(document.createTextNode(book.isRead));
 
+	bookCard.appendChild(bookCardRemove);
 	bookCard.appendChild(bookCardTitle);
 	bookCard.appendChild(bookCardAuthor);
 	bookCard.appendChild(bookCardPages);

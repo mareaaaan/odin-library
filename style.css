@@ -31,6 +31,7 @@ body {
 }
 
 .book-card {
+    position: relative;
     background-color: var(--card-color);
     padding: 20px;
     border-radius: var(--border-radius);
@@ -40,6 +41,19 @@ body {
     height: 200px;
     display: grid;
     grid-template-rows: 2fr repeat(3, 1fr);
+}
+
+.book-card__remove {
+    position: absolute;
+    margin: 5px 5px 0 0;
+    right: 0%;
+    width: 20px;
+    height: 20px;
+    color: yellow;
+}
+
+.book-card__remove:hover {
+    transform: scale(1.5);
 }
 
 .book-card__title {
