@@ -21,10 +21,34 @@
             <p class="book-card__pages"></p>
             <p class="book-card__isRead"></p>
         </section> -->
-        
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon--add" viewBox="0 -960 960 960">
+            <path
+                d="M447-274h72v-166h167v-72H519v-174h-72v174H274v72h173v166Zm33.404 219q-88.872 0-166.125-33.084-77.254-33.083-135.183-91.012-57.929-57.929-91.012-135.119Q55-391.406 55-480.362q0-88.957 33.084-166.285 33.083-77.328 90.855-134.809 57.772-57.482 135.036-91.013Q391.238-906 480.279-906q89.04 0 166.486 33.454 77.446 33.453 134.853 90.802 57.407 57.349 90.895 134.877Q906-569.34 906-480.266q0 89.01-33.531 166.247-33.531 77.237-91.013 134.86-57.481 57.623-134.831 90.891Q569.276-55 480.404-55Z" />
+        </svg>
     </article>
     <footer class="footer"></footer>
+    <div class="layer"></div>
+    <form class="form">
+        <div class="label-input-pair">
+            <label for="title">Title</label>
+            <input type="text" name="title" id="title">
+        </div>
 
+        <div class="label-input-pair">
+            <label for="author">Author</label>
+            <input type="text" name="author" id="author">
+        </div>
+
+        <div class="label-input-pair">
+            <label for="number">Number of pages</label>
+            <input type="number" name="page-number" id="page-number">
+        </div>
+
+        <div class="label-input-pair">
+            <label for="is-read">Already read?</label>
+            <input type="checkbox" name="is-read" id="is-read">
+        </div>
+    </form>
 </body>
 
 </html>
