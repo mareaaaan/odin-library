@@ -4,6 +4,7 @@ const addIcon = document.getElementsByClassName("icon--add")[0];
 const form = document.getElementsByClassName("form")[0];
 const body = document.getElementsByTagName("BODY")[0];
 const layer = document.getElementsByClassName("layer")[0];
+const addButton = document.getElementsByClassName("add-button")[0];
 
 function Book(title, author, pageNumber, isRead) {
 	this.title = title;
@@ -57,6 +58,11 @@ function displayBooks() {
 	}
 }
 
+function resetBooksContainer() {
+	booksContainer.replaceChildren(addIcon);
+	displayBooks();
+}
+
 addBookToLibrary("Ma cac printre stele", "Marian Gartu", 169, true);
 addBookToLibrary("Ce frumoasa este viata", "Vasilica Ceferistul", 10, false);
 addBookToLibrary("Ma-ta e o vaca", "Ciprian Ciohodaru", 341, true);
@@ -83,8 +89,22 @@ function hideAddBookForm() {
 	form.remove();
 }
 
+function submitAddBookForm(event) {
+	event.preventDefault();
+
+	let title = document.getElementById("title").value;
+	let author = document.getElementById("author").value;
+	let pageNumber = parseInt(document.getElementById("page-number").value);
+	let isRead = document.getElementById("is-read").checked;
+	addBookToLibrary(title, author, pageNumber, isRead);
+
+	resetBooksContainer();
+	hideAddBookForm();
+}
+
 addIcon.addEventListener("click", showAddBookForm);
 layer.addEventListener("click", hideAddBookForm);
+addButton.addEventListener("click", submitAddBookForm);
 
 displayBooks();
 hideAddBookForm();
