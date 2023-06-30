@@ -54,6 +54,9 @@ addBookToLibrary("Ma cac printre stele", "Marian Gartu", 169, true);
 addBookToLibrary("Ce frumoasa este viata", "Vasilica Ceferistul", 10, false);
 addBookToLibrary("Ma-ta e o vaca", "Ciprian Ciohodaru", 341, true);
 addBookToLibrary("Nu am avut alternativa", "Catalin Gartu", 542, false);
-
+addBookToLibrary("Nu am avut alternativa", "Catalin Gartu", 542, false);
+addBookToLibrary("Nu am avut alternativa", "Catalin Gartu", 542, false);
+addBookToLibrary("Nu am avut alternativa", "Catalin Gartu", 542, false);
+addBookToLibrary("Nu am avut alternativa", "Catalin Gartu", 542, false);
 
 displayBooks();
