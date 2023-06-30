@@ -1,0 +1,16 @@
+body {
+    min-height: 100vh;
+    background-color: antiquewhite;
+}
+
+.books-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.book-card {
+    background-color: burlywood;
+    height: 400px;
+    width: 300px;
+}
