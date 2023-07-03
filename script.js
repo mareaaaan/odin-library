@@ -17,12 +17,14 @@ function addBookToLibrary(title, author, pageNumber, isRead) {
 	books.push(new Book(title, author, pageNumber, isRead));
 }
 
-function createBookCard(book) {
+function createBookCard(bookIndex) {
+	book = books[bookIndex];
 	const bookCard = document.createElement("section");
 	bookCard.classList.add("book-card");
-	
+	bookCard.dataset.index = bookIndex;
+
 	const bookCardRemove = document.createElement("img");
-	bookCardRemove.setAttribute("src","x_icon.svg");
+	bookCardRemove.setAttribute("src", "x_icon.svg");
 	bookCardRemove.classList.add("book-card__remove");
 
 	const bookCardTitle = document.createElement("header");
@@ -59,7 +61,7 @@ function displayBookCard(book) {
 
 function displayBooks() {
 	for (let book in books) {
-		displayBookCard(books[book]);
+		displayBookCard(book);
 	}
 }
 
@@ -67,11 +69,6 @@ function resetBooksContainer() {
 	booksContainer.replaceChildren(addIcon);
 	displayBooks();
 }
-
-addBookToLibrary("Ma cac printre stele", "Marian Gartu", 169, true);
-addBookToLibrary("Ce frumoasa este viata", "Vasilica Ceferistul", 10, false);
-addBookToLibrary("Ma-ta e o vaca", "Ciprian Ciohodaru", 341, true);
-addBookToLibrary("Nu am avut alternativa", "Catalin Gartu", 542, false);
 
 function blurBody() {
 	const layer = document.getElementsByClassName("layer")[0];
@@ -110,6 +107,11 @@ function submitAddBookForm(event) {
 addIcon.addEventListener("click", showAddBookForm);
 layer.addEventListener("click", hideAddBookForm);
 addButton.addEventListener("click", submitAddBookForm);
+
+addBookToLibrary("Ma cac printre stele", "Marian Gartu", 169, true);
+addBookToLibrary("Ce frumoasa este viata", "Vasilica Ceferistul", 10, false);
+addBookToLibrary("Ma-ta e o vaca", "Ciprian Ciohodaru", 341, true);
+addBookToLibrary("Nu am avut alternativa", "Catalin Gartu", 542, false);
 
 displayBooks();
 hideAddBookForm();
