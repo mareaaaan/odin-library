@@ -27,6 +27,10 @@ function createBookCard(bookIndex) {
 	bookCardRemove.setAttribute("src", "x_icon.svg");
 	bookCardRemove.classList.add("book-card__remove");
 
+	bookCardRemove.addEventListener("click", function () {
+		removeBookCard(bookCard);
+	});
+
 	const bookCardTitle = document.createElement("header");
 	bookCardTitle.classList.add("book-card__title");
 	bookCardTitle.appendChild(document.createTextNode(book.title));
@@ -50,6 +54,19 @@ function createBookCard(bookIndex) {
 	bookCard.appendChild(bookCardIsRead);
 
 	return bookCard;
+}
+
+function removeBookCard(bookCard) {
+	books.splice(bookCard.dataset.index, 1);
+	booksContainer.removeChild(bookCard);
+	resetBooksContainer();
+}
+
+function displayBookCard(book) {
+	booksContainer.insertBefore(
+		createBookCard(book),
+		booksContainer.children[booksContainer.children.length - 1]
+	);
 }
 
 function displayBookCard(book) {
