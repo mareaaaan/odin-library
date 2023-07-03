@@ -27,7 +27,7 @@ body {
     width: 80%;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 10px;
+    gap: 20px;
 }
 
 .book-card {
@@ -131,6 +131,7 @@ input[type="checkbox"] {
     padding: 10px 20px;
     border-radius: var(--border-radius);
     border: solid 1px var(--card-color-hover);
+    width: 160px;
 }
 
 .book-card__button[data-is-read="true"] {
