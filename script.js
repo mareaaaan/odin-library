@@ -43,17 +43,27 @@ function createBookCard(bookIndex) {
 	bookCardPages.classList.add("book-card__pages");
 	bookCardPages.appendChild(document.createTextNode(book.pageNumber));
 
-	const bookCardIsRead = document.createElement("p");
-	bookCardIsRead.classList.add("book-card__isRead");
-	bookCardIsRead.appendChild(document.createTextNode(book.isRead));
+	const bookCardIsReadButton = document.createElement("button");
+	bookCardIsReadButton.classList.add("book-card__button");
+	bookCardIsReadButton.appendChild(document.createTextNode(book.isRead ? 'Already read' : 'Not read yet'));
+	bookCardIsReadButton.dataset.isRead = book.isRead;
+
+	bookCardIsReadButton.addEventListener("click", function () {
+		toggleReadBook(bookCard);
+	});
 
 	bookCard.appendChild(bookCardRemove);
 	bookCard.appendChild(bookCardTitle);
 	bookCard.appendChild(bookCardAuthor);
 	bookCard.appendChild(bookCardPages);
-	bookCard.appendChild(bookCardIsRead);
+	bookCard.appendChild(bookCardIsReadButton);
 
 	return bookCard;
+}
+
+function toggleReadBook(bookCard) {
+	books[bookCard.dataset.index].isRead = ! books[bookCard.dataset.index].isRead;
+	resetBooksContainer();
 }
 
 function removeBookCard(bookCard) {

@@ -125,6 +125,29 @@ input[type="checkbox"] {
     border: solid 1px var(--card-color-hover);
 }
 
+.book-card__button {
+    font-size: 20px;
+    justify-self: center;
+    padding: 10px 20px;
+    border-radius: var(--border-radius);
+    border: solid 1px var(--card-color-hover);
+}
+
+.book-card__button[data-is-read="true"] {
+    background-color: green;
+}
+
+.book-card__button[data-is-read="true"]:hover {
+    background-color: #004700;
+}
+
+.book-card__button[data-is-read="false"] {
+    background-color: red;
+}
+
+.book-card__button[data-is-read="false"]:hover {
+    background-color: #830000;
+}
 .add-button:hover {
     background-color: #78350f;
 }
